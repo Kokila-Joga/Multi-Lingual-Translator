@@ -420,7 +420,7 @@
         </div>
 
         <div class="controls">
-            <button class="translate-btn" onclick="translate()" id="translateBtn">
+            <button class="translate-btn" onclick="performTranslation()" id="translateBtn">
                 Translate
             </button>
             <button class="swap-btn" onclick="swapLanguages()">
@@ -491,7 +491,7 @@
             }
         }
 
-        async function translate() {
+        async function performTranslation() {
             if (!apiKey) {
                 showError('Please enter and save your API key first!');
                 return;
@@ -596,7 +596,7 @@
 
         document.getElementById('sourceText').addEventListener('keypress', function(e) {
             if (e.key === 'Enter' && e.ctrlKey) {
-                translate();
+                performTranslation();
             }
         });
     </script>
